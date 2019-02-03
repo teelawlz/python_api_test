@@ -9,7 +9,7 @@ Python unittests-based tiny framework. Meant more as practice for Python and tak
 - `pipenv install`
 
 ## Run
-- `pipenv run python -m unittest -v discover`
+- `pipenv run python -m unittest discover -v`
 
 ## ToDo
 - Add a way to export results for things like CI (JUnit XML format, for example)
