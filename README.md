@@ -2,7 +2,7 @@
 Python unittests-based tiny framework. Meant more as practice for Python and taking a look at its basic testing tools.
 
 ## Basic Requirements
-- Pipenv (intall directions [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today))
+- Pipenv (install directions [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today))
 
 
 ## Setup
