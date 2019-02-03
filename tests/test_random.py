@@ -1,5 +1,5 @@
 import unittest
-from chuck_client import ChuckClient
+from .chuck_client import ChuckClient
 
 class TestRandom(unittest.TestCase):
 
@@ -8,5 +8,5 @@ class TestRandom(unittest.TestCase):
   def test_random_success(self):
     self.assertEqual(self.Response.json()['type'], 'success')
 
-  def test_random_status_code(self):
+  def test_status_code(self):
     self.assertEqual(self.Response.status_code, 200)
