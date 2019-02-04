@@ -3,13 +3,15 @@ Python unittests-based tiny framework. Meant more as practice for Python and tak
 
 ## Basic Requirements
 - Pipenv (install directions [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today))
+- Latest browser webdrivers (e.g. Chromedriver, Geckodriver)
 
 
 ## Setup
 - `pipenv install`
 
 ## Run
-- `pipenv run python -m unittest discover -v`
+- For API Test: `pipenv run python -m unittest discover -v`
+- For Web Test: `pipenv run robot web_app_tests`
 
 ## ToDo
 - Add a way to export results for things like CI (JUnit XML format, for example)
