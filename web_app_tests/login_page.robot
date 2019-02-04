@@ -2,20 +2,30 @@
 Documentation     Login Test for redfin.com
 ...
 Resource          resource.robot
-# Library           SeleniumLibrary
 
 *** Variables ***
 ${VALID USER}     tltest100@mailinator.com
 ${VALID PASSWORD}     Ohlookanacorn@123
+${USERNAME}       TLTest
+# TODO: Make less hardcoded
+
+## Page Locators
+${LOGIN BUTTON}    css=[data-rf-test-name='SignInLink']
+${EMAIL SIGNIN BUTTON}    css=.emailSignInButton
+${EMAIL FIELD}    css=input[name='emailInput']
+${PASSWORD FIELD}    css=input[name='passwordInput']
+${SUBMIT BUTTON}    css=button.submitButton
+${PROFILE LINK}    css=.NameAndThumbnail
 
 *** Test Cases ***
 Valid Login
     Open Browser To Login Page
     Click Login Button
-    # Input Username    demo
-    # Input Password    mode
-    # Submit Credentials
-    # Welcome Page Should Be Open
+    Click Continue With Email Button
+    Input Username
+    Input Password
+    Submit Credentials
+    Username is displayed
     [Teardown]    Close Browser
 
 
@@ -23,30 +33,25 @@ Valid Login
 Open Browser To Login Page
     Open Browser    ${BASE URL}    ${BROWSER}
     Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
 
 Click Login Button
-    Click Button  css=[data-rf-test-name='SignInLink']
+    Click Button  ${LOGIN BUTTON}
 
-Login Page Should Be Open
-    Title Should Be    Real Estate, Homes for Sale, MLS Listings, Agents | Redfin
+Click Continue With Email Button
+    Click Button  ${EMAIL SIGNIN BUTTON}
 
 Go To Login Page
     Go To    ${LOGIN URL}
     Login Page Should Be Open
 
 Input Username
-    [Arguments]    ${username}
-    Input Text    username_field    ${username}
+    Input Text  ${EMAIL FIELD}    ${VALID USER}
 
 Input Password
-    [Arguments]    ${password}
-    Input Text    password_field    ${password}
+    Input Text  ${PASSWORD FIELD}    ${VALID PASSWORD}
 
 Submit Credentials
-    Click Button    login_button
+    Click Button  ${SUBMIT BUTTON}
 
-Welcome Page Should Be Open
-    Location Should Be    ${WELCOME URL}
-    Title Should Be    Welcome Page
+Username is displayed
+    Element Should Contain  ${PROFILE LINK}  ${USERNAME}
