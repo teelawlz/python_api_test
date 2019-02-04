@@ -3,6 +3,7 @@ Python unittests-based tiny framework. Meant more as practice for Python and tak
 
 ## Basic Requirements
 - Pipenv (install directions [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today))
+- Latest browser webdrivers (e.g. Chromedriver, Geckodriver)
 
 
 ## Setup
