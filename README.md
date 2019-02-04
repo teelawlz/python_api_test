@@ -1,4 +1,4 @@
-# Basic API Test
+# Basic API and Web App Testing
 Python unittests-based tiny framework. Meant more as practice for Python and taking a look at its basic testing tools.
 
 ## Basic Requirements
