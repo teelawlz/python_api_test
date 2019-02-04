@@ -14,5 +14,4 @@ Python unittests-based tiny framework. Meant more as practice for Python and tak
 - For Web Test: `pipenv run robot web_app_tests`
 
 ## ToDo
-- Add a way to export results for things like CI (JUnit XML format, for example)
-- Figure out actual python convention
+- Add a way to export results for things like CI (JUnit XML format, for example (nose/pytest look promising))
